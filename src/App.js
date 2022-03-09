@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Header from './components/header/header.component';
+import Footer from './components/footer/footer';
+import CharactersContextProvider from './contexts/CharactersContext';
+import Characters from './components/Characters';
+import NotFound from './components/NotFound';
+import './assets/css/styles.css';
+import CharacterContextProvider from './contexts/CharacterContext';
+import Character from './components/CharacterDetails';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Switch >
+        <Route exact path="/">
+          <CharactersContextProvider>
+            <Characters />
+          </CharactersContextProvider>
+        </Route>
+        <Route path="/character/:char_id">
+          <CharacterContextProvider>
+            <Character />
+          </CharacterContextProvider>
+        </Route>
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

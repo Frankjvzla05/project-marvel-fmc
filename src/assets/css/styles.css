@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*---- Styles header ----*/
+.header {
+    height: 50px;
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header>a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.headerControl {
+    width: 3.2rem;
+    margin-right: .5rem;
+}
+
+/*---- End--Styles header ----*/
+
+/*---- Styles footer ----*/
+.footer {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: #87909b;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 0 auto;
+}
+
+/*---- End--Styles footer ----*/
+
+/*---- Styles Character.js ----*/
+.Character-item {
+    margin: 1rem 1rem;
+    color: #000;
+    background-color: #78736b3b;
+    padding: .2rem;
+
+}
+
+/*---- End--Styles Character.js ----*/
+
+
+/*---- Styles Characters.js ----*/
+.preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    line-height: .7rem;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+/*---- End-- Styles Characters.js ----*/
+
+.buttonOption {
+    padding: 9px;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.buttonOption:hover {
+    color: red;
+    border-radius: 1px solid blue;
+    background-color: rgb(201, 187, 187);
+}
+
+.notFound {
+    width: 20%;
+    margin: 15% auto 0;
+    text-align: center;
+}
+
+
+.char-footer {
+    color: #000;
+}
+
+.name-detail {
+    color: #eb0d0df2;
+}
+
+/* img character */
+
+.Character-img {
+    width: 400px;
+    height: 350px;
+}
+
+
+
+/*---- Styles CharacterDetail.js ----*/
+.containerDetail {
+    background-color: #2A2E33;
+}
+
+.char-detail {
+
+    height: 84vh;
+    color: #fff;
+    text-align: center;
+    margin-top: 3em;
+    padding-top: 2em;
+}
+
+.char_url {
+    margin-bottom: 1rem;
+    padding: 9px;
+    background-color: rgb(13, 85, 6);
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*---- End--Styles CharacterDetail.js ----*/
