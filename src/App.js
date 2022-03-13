@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer';
@@ -12,20 +12,20 @@ import Character from './components/CharacterDetails';
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Switch >
-        <Route exact path="/">
-          <CharactersContextProvider>
-            <Characters />
-          </CharactersContextProvider>
-        </Route>
-        <Route path="/character/:char_id">
-          <CharacterContextProvider>
-            <Character />
-          </CharacterContextProvider>
-        </Route>
-        <Route component={NotFound} />
-      </Switch>
+      <Header />      
+        <Switch>      
+            <Route exact path="/">
+              <CharactersContextProvider>
+                <Characters />
+              </CharactersContextProvider>
+            </Route>
+            <Route path="/character/:char_id">
+              <CharacterContextProvider>
+                <Character />
+              </CharacterContextProvider>
+            </Route>
+            <Route component={NotFound} />
+        </Switch>      
       <Footer />
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ export const CharacterContext = createContext();
 
 const CharacterContextProvider = ({ children }) => {
     const char_id = window.location.pathname.split("/")[2];
-    const [doneLoad, setDoneLoad] = useState();
+    const [doneFetch, setDoneFetch] = useState();
     const [currentChar, setCurrentChar] = useState([]);
     const [error, setError] = useState(false);
 
@@ -17,7 +17,7 @@ const CharacterContextProvider = ({ children }) => {
             .then((res) => res.json())
             .then((response) => {
                 setCurrentChar(response.data.results[0])
-                setDoneLoad(true);
+                setDoneFetch(true);
             })
             .catch((error) => console.log(error))
         }
@@ -27,7 +27,7 @@ const CharacterContextProvider = ({ children }) => {
     }, [char_id]);
 
     return (
-        <CharacterContext.Provider value={{ doneLoad, currentChar }}>
+        <CharacterContext.Provider value={{ doneFetch, currentChar }}>
             {children}
         </CharacterContext.Provider>
     );

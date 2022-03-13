@@ -3,14 +3,14 @@ import { CharactersContext } from "../../contexts/CharactersContext";
 import InfoCharacters from "./Characters";
 
 const Characters = () => {
-    const { characters, doneLoad } = useContext(CharactersContext);
+    const { characters, doneFetch } = useContext(CharactersContext);
 
     return (
 
         <div className="characters-page">
 
 
-            {doneLoad ?
+            {doneFetch ?
                 (characters.length ?
                     <InfoCharacters characters={characters} />
                     :

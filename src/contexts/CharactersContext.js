@@ -5,7 +5,7 @@ export const CharactersContext = createContext();
 
 const CharactersContextProvider = ({ children }) => {
 
-    const [doneLoad, setDoneLoad] = useState();
+    const [doneFetch, setDoneFetch] = useState();
     const [characters, setCharacters] = useState([]);
 
     // didMount, didUpdate, willUnmount
@@ -20,14 +20,14 @@ const CharactersContextProvider = ({ children }) => {
             .then((res) => res.data.results)
             .then((data) => {
                 setCharacters(data);
-                setDoneLoad(true);
+                setDoneFetch(true);
                 console.log(data);
             })
             .catch((err) => console.log(err));
     };
 
     return (
-        <CharactersContext.Provider value={{ doneLoad, characters }}>
+        <CharactersContext.Provider value={{ doneFetch, characters }}>
             {children}
         </CharactersContext.Provider>
     );
