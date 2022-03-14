@@ -1,5 +1,5 @@
-import React from "react";
-import ButtomOption from "../Common/ButtonOption";
+import React from 'react';
+import ButtomOption from '../Common/ButtonOption';
 
 const InfoCharacterPreview = ({ char }) => {
     const { id, name, thumbnail } = char;

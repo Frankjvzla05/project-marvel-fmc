@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect } from "react";
-import { marvelCharacters } from "../constants";
+import React, { createContext, useState, useEffect } from 'react';
+import { marvelCharacters } from '../constants';
 
 export const CharactersContext = createContext();
 

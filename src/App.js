@@ -1,32 +1,31 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer';
+import Layout from './components/Layout/Layout';
 import CharactersContextProvider from './contexts/CharactersContext';
 import Characters from './components/Characters';
 import NotFound from './components/NotFound';
-import './assets/css/styles.css';
 import CharacterContextProvider from './contexts/CharacterContext';
 import Character from './components/CharacterDetails';
+import './assets/css/styles.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />      
-        <Switch>      
-            <Route exact path="/">
-              <CharactersContextProvider>
-                <Characters />
-              </CharactersContextProvider>
-            </Route>
-            <Route path="/character/:char_id">
-              <CharacterContextProvider>
-                <Character />
-              </CharacterContextProvider>
-            </Route>
-            <Route component={NotFound} />
-        </Switch>      
-      <Footer />
+      <Layout>
+        <Switch>
+          <Route exact path="/">
+            <CharactersContextProvider>
+              <Characters />
+            </CharactersContextProvider>
+          </Route>
+          <Route path="/character/:char_id">
+            <CharacterContextProvider>
+              <Character />
+            </CharacterContextProvider>
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
     </BrowserRouter>
   );
 }

@@ -1,8 +1,8 @@
-import React from "react";
-import InfoCharacterPreview from "../Characters/Character";
+import React from 'react';
+import InfoCharacterPreview from '../Characters/Character';
 
 const InfoCharacters = ({ characters }) => {
-  
+
   return (
     <div className="Character-preview">
       <div className="preview">

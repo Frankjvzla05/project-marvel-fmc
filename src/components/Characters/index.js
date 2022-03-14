@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { CharactersContext } from "../../contexts/CharactersContext";
-import InfoCharacters from "./Characters";
+import React, { useContext } from 'react';
+import { CharactersContext } from '../../contexts/CharactersContext';
+import InfoCharacters from './Characters';
 
 const Characters = () => {
     const { characters, doneFetch } = useContext(CharactersContext);
