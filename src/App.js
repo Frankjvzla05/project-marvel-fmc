@@ -1,18 +1,16 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import CharactersContextProvider from './contexts/CharactersContext';
 import Characters from './components/Characters';
 import NotFound from './components/NotFound';
 import CharacterContextProvider from './contexts/CharacterContext';
-// import Character from './components/CharacterDetails';
+import Character from './components/CharacterDetails';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchCharactersContextProvider from './contexts/SearchCharactersContext';
 import SearchResults from './components/SearchResults';
 import './assets/css/styles.css';
 import { ErrorBoundary } from './ErrorBoundaries/ErrorBoundaries';
-import Loader from './components/Loader/Loader';
-const Character = lazy(() => import('./components/CharacterDetails'));
 
 function App() {
   return (
@@ -26,21 +24,11 @@ function App() {
                 <Characters />
               </CharactersContextProvider>
             </Route>
-
-            <Suspense
-              fallback={
-                <div>
-                  <Loader />
-                </div>
-              }
-            >
-              <Route path="/character/:char_id">
-                <CharacterContextProvider>
-                  <Character />
-                </CharacterContextProvider>
-              </Route>
-            </Suspense>
-
+            <Route path="/character/:char_id">
+              <CharacterContextProvider>
+                <Character />
+              </CharacterContextProvider>
+            </Route>
             <Route path="/search/:query">
               <SearchCharactersContextProvider>
                 <SearchResults />
