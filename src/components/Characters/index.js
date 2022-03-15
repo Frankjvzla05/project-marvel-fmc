@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CharactersContext } from '../../contexts/CharactersContext';
 import InfoCharacters from './Characters';
+import Loader from '../Loader/Loader';
 
 const Characters = () => {
     const { characters, doneFetch } = useContext(CharactersContext);
@@ -14,10 +15,11 @@ const Characters = () => {
                 (characters.length ?
                     <InfoCharacters characters={characters} />
                     :
-                    "error")
+                    "No se encontro la informacion")
+
 
                 :
-                "No se encontro la informacion"
+                < Loader />
             }
 
         </div>

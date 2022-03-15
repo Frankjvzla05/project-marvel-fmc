@@ -34,6 +34,20 @@ body {
     margin-right: .5rem;
 }
 
+.buttonSearch {
+    height: 50px;
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box;
+    background-color: #78736b3b;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
 .Character-item {
     margin: 1rem 1rem;
     color: #000;
@@ -96,7 +110,7 @@ body {
 .detail-page {
     background-color: #2A2E33;
     background-image: url(/src/assets/img/universe.png);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .containerDetail {
@@ -155,8 +169,13 @@ body {
         flex-direction: column;
     }
 
+    .char-description>.buttonOption {
+        margin-bottom: 2rem;
+    }
+
     .char-description {
         padding-top: 0;
+        padding-bottom: 1rem;
     }
 
     .char-image img {
